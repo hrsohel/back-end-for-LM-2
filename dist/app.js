@@ -21,6 +21,7 @@ mongoose_1.default.connect(process.env.MONGODB_URL)
     .catch((error) => console.error(error.message));
 app.use((0, cors_1.default)({
     origin: ["http://localhost:3000", "https://library-management-2-black.vercel.app"],
+    credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"]
 }));
 app.use(body_parser_1.default.json());

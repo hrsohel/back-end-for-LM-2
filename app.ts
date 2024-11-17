@@ -19,6 +19,7 @@ mongoose.connect(process.env.MONGODB_URL as string)
 
 app.use(cors({
      origin: ["http://localhost:3000", "https://library-management-2-black.vercel.app"],
+     credentials: true,
      methods: ["GET", "POST", "PUT", "DELETE"]
 }))
 app.use(bodyParser.json())
