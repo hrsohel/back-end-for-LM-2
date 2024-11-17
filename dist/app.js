@@ -20,9 +20,10 @@ mongoose_1.default.connect(process.env.MONGODB_URL)
     .then(() => console.log("Database connected."))
     .catch((error) => console.error(error.message));
 app.use((0, cors_1.default)({
-    origin: ["http://localhost:3000", "https://library-management-2-black.vercel.app"],
+    origin: ["http://localhost:3000", "https://library-management-2-black.vercel.app", "https://back-end-for-lm-2-5yck.vercel.app"],
     credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE"]
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With", "Accept", "Origin", "X-Auth-Token", "X-CSRF-Token"],
 }));
 app.use(body_parser_1.default.json());
 app.use(body_parser_1.default.urlencoded({ extended: true }));

@@ -18,9 +18,10 @@ mongoose.connect(process.env.MONGODB_URL as string)
 .catch((error: any) => console.error(error.message))
 
 app.use(cors({
-     origin: ["http://localhost:3000", "https://library-management-2-black.vercel.app"],
+     origin: ["http://localhost:3000", "https://library-management-2-black.vercel.app", "https://back-end-for-lm-2-5yck.vercel.app"],
      credentials: true,
-     methods: ["GET", "POST", "PUT", "DELETE"]
+     methods: ["GET", "POST", "PUT", "DELETE"],
+     allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With", "Accept", "Origin", "X-Auth-Token", "X-CSRF-Token"],
 }))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
