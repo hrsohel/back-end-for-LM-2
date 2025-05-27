@@ -4,9 +4,9 @@
   "main": "app.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --exec ts-node app.ts",
-    "build": "tsc",
-    "start": "node dist/app.js",
+    "dev": "node api.js && nodemon --exec ts-node app.ts",
+    "build": "node api.js && tsc",
+    "start": "node api.js && node dist/app.js",
     "server": "nodemon dist/app.js"
   },
   "dependencies": {
@@ -23,6 +23,7 @@
     "helmet": "^8.0.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.7.0",
+    "node-fetch": "^3.3.2",
     "ts-node": "^10.9.2"
   },
   "devDependencies": {
